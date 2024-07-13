@@ -1,6 +1,6 @@
 {
   "name": "@tambolishahid/ckeditor5-videouploader",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A plugin for CKEditor 5.",
   "keywords": [
     "ckeditor",
@@ -80,11 +80,6 @@
     "**/*.css": [
       "stylelint --quiet --allow-empty-input"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "dependencies": {
     "lodash-es": "^4.17.21"

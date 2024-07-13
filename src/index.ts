@@ -22,6 +22,7 @@ export { default as VideoUploadProgress } from './videoupload/videouploadprogres
 export { default as VideoUploadUI } from './videoupload/videouploadui.js';
 export { default as VideoUtils } from './videoutils.js';
 
+export type { VideoConfig } from './videoconfig.js';
 export const icons = {
 	ckeditor
 };
