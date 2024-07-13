@@ -40,6 +40,7 @@
     "@ckeditor/ckeditor5-inspector": ">=4.1.0",
     "@ckeditor/ckeditor5-package-tools": "^2.0.0",
     "@types/chai": "^4.3.1",
+    "@types/lodash-es": "^4.17.12",
     "@types/mocha": "^9.1.1",
     "@typescript-eslint/eslint-plugin": "~5.43.0",
     "@typescript-eslint/parser": "^5.18.0",
@@ -84,5 +85,8 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "dependencies": {
+    "lodash-es": "^4.17.21"
   }
 }

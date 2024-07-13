@@ -26,19 +26,32 @@ import {
 	MediaEmbed,
 	Paragraph,
 	Table,
-	TableToolbar
+	TableToolbar,
+	FileRepository
 } from 'ckeditor5';
 
 import CKEditorInspector from '@ckeditor/ckeditor5-inspector';
 
 import Videouploader from '../src/videouploader.js';
+import VideoUpload from '../src/videoupload.js';
+import VideoResize from '../src/videoresize.js';
+import VideoToolbar from '../src/videotoolbar.js';
+import VideoStyle from '../src/videostyle.js';
+import VideoInsert from '../src/videoinsert.js';
+
+import CustomUploadAdapter from './CustomUploadAdapter.js';
 
 import 'ckeditor5/ckeditor5.css';
 
 ClassicEditor
 	.create( document.getElementById( 'editor' )!, {
+		// myUploadAdapter: {
+		// 	baseUrl: 'http://localhost:3000/app/ckeditorplugin/upload/pin/mynewpin/get_policy',
+		// 	makePublicURL: 'http://localhost:3000/app/ckeditorplugin/upload/pin/mynewpin/make_public'
+		// },
 		plugins: [
-			Videouploader,
+			FileRepository,
+			VideoToolbar, Videouploader, VideoUpload, VideoResize, VideoStyle, VideoInsert,
 			Essentials,
 			Autoformat,
 			BlockQuote,
@@ -59,13 +72,14 @@ ClassicEditor
 			TableToolbar,
 			CodeBlock,
 			Code,
-			Base64UploadAdapter
+			CustomUploadAdapter
 		],
+		// extraPlugins: [CustomUploadAdapter],
 		toolbar: [
 			'undo',
 			'redo',
 			'|',
-			'videouploaderButton',
+			'videoUpload',
 			'|',
 			'heading',
 			'|',
