@@ -1,0 +1,17 @@
+{
+  "plugins": [
+    {
+      "name": "Videouploader",
+      "className": "Videouploader",
+      "description": "Adds text to the editor.",
+      "path": "src/videouploader.ts",
+      "uiComponents": [
+        {
+          "name": "videouploaderButton",
+          "type": "Button",
+          "iconPath": "theme/icons/ckeditor.svg"
+        }
+      ]
+    }
+  ]
+}
