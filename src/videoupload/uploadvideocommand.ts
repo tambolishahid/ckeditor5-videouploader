@@ -32,12 +32,12 @@ export default class UploadVideoCommand extends Command {
 		const selectionAttributes = Object.fromEntries(
 			selection.getAttributes()
 		);
-		console.log( 'selectionAttributes', selectionAttributes );
+		// console.log( 'selectionAttributes', selectionAttributes );
 		// if (!options.file && !options.files) {
 		//     return;
 		// }
 
-		console.log( 'files', files );
+		// console.log( 'files', files );
 		files.forEach( ( file, index ) => {
 			const selectedElement = selection.getSelectedElement();
 

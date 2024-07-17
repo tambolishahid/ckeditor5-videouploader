@@ -64,7 +64,7 @@ export default class VideoUtils extends Plugin {
 		const editor = this.editor;
 		const model = editor.model;
 		const selection = model.document.selection;
-		console.log( 'insert steppppppp' );
+		// console.log( 'insert steppppppp' );
 		videoType = determineVideoTypeForInsertion(
 			editor,
 			selectable || selection,
@@ -81,8 +81,8 @@ export default class VideoUtils extends Plugin {
 				delete attributes[ attributeName ];
 			}
 		}
-		console.log( 'complete insertion videoType', videoType );
-		console.log( 'complete insertion attributes', attributes );
+		// console.log( 'complete insertion videoType', videoType );
+		// console.log( 'complete insertion attributes', attributes );
 
 		return model.change( writer => {
 			const videoElement = writer.createElement( videoType!, attributes );
@@ -95,7 +95,7 @@ export default class VideoUtils extends Plugin {
 						'auto' :
 						undefined
 			} );
-			console.log( 'complete insertion videoElement', videoElement );
+			// console.log( 'complete insertion videoElement', videoElement );
 
 			// Inserting an image might've failed due to schema regulations.
 			if ( videoElement.parent ) {
@@ -118,8 +118,8 @@ export default class VideoUtils extends Plugin {
 
 			// return null;
 		} );
-		console.log( 'complete insertion videoType', videoType );
-		console.log( 'complete insertion attributes', attributes );
+		// console.log( 'complete insertion videoType', videoType );
+		// console.log( 'complete insertion attributes', attributes );
 	}
 
 	public getClosestSelectedVideoWidget(

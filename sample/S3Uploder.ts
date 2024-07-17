@@ -29,10 +29,12 @@ export default class S3UploadAdapter implements UploadAdapter {
 		}
 		const fileName = this.generateRandomFilename( file.name );
 		const fileExtension: string | undefined = file.name.split( '.' ).pop();
+		const fileType = file.type.split( '/' )[ 0 ];
 		// 1. Get signed URL
 		const presignedPost = await this.fetchSignedUrl(
 			fileName,
-			fileExtension
+			fileExtension,
+			fileType
 		);
 		const formData = new FormData();
 		const presignedPostFields = presignedPost.fields;
@@ -108,11 +110,12 @@ export default class S3UploadAdapter implements UploadAdapter {
 
 	private async fetchSignedUrl(
 		fileName: string,
-		fileExtension: string | undefined
+		fileExtension: string | undefined,
+		fileType: string
 	): Promise<PresignedPostType> {
 		try {
 			const response = await fetch(
-				`${ this.baseUrl }?media_type=image&file_name=${ fileName }&file_extension=${ fileExtension }`,
+				`${ this.baseUrl }?media_type=${ fileType }&file_name=${ fileName }&file_extension=${ fileExtension }`,
 				{
 					method: 'GET'
 				}

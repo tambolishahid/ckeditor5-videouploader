@@ -49,7 +49,7 @@ export default class VideoUploadUI extends Plugin {
 				const videosToUpload = Array.from( files ).filter( file =>
 					videoMediaTypesRegExp.test( file.type )
 				);
-				console.log( 'videosToUpload', videosToUpload );
+				// console.log( 'videosToUpload', videosToUpload );
 				if ( videosToUpload.length ) {
 					editor.execute( 'uploadVideo', { file: videosToUpload } );
 				}

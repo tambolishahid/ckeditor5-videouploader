@@ -12,7 +12,10 @@ import { first,
 import type VideoUtils from '../videoutils.js';
 
 export function createVideoViewElement( writer: DowncastWriter, videoType: 'videoBlock' | 'videoInline' | null ): ViewContainerElement {
-	const emptyElement = writer.createEmptyElement( 'video' );
+	const emptyElement = writer.createEmptyElement( 'video', {
+		controls: 'true',
+		preload: 'metadata'
+	} );
 
 	const container = videoType === 'videoBlock' ?
 		writer.createContainerElement( 'figure', { class: 'video' } ) :
